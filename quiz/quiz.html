@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="question">
+        <h1>Bienvenue dans ce quiz</h1>
+        <p>Le quiz est facile, ce qu'il faut faire c'est de prendre la réponse correcte à côté de la question posée.</p>
+        <p>Bonne chance !</p>
+        <div class="bt">
+            <button onclick="suivant()">Commencer</button>
+        </div>
+    </div>
+
+    <div class="question question1" data-correct="2">
+        <div>
+            <p>Question 1 :</p>
+        </div>
+        <div class="q1" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+            <div id="lesigne">?</div>
+            <div> 1 + 1 =   </div>
+        </div>
+        <div id="infoBox">L'addition de deux nombres est une opération mathématique de base qui consiste à combiner les valeurs de deux nombres pour obtenir leur somme</div>
+        <div class="choix-container">
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget1">1</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget2">2</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget3">3</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget4">4</div>
+        </div> 
+        <div class="bt">
+            <button onclick="revien()">Précédent</button>
+            <button onclick="suivant()">Suivant</button>
+        </div>
+        <span class="countdown"></span> <!-- Ajout du countdown -->
+    </div>
+
+    <div class="question question2" data-correct="0">
+        <div>
+            <p>Question 2 :</p>
+        </div>
+        <div class="q2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div> 1 - 1 = </div>
+        </div>
+        <div class="choix-container">
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget5">0</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget6">1</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget7">2</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget8">3</div>
+        </div>
+        <div class="bt">
+            <button onclick="revien()">Précédent</button>
+            <button onclick="suivant()">Suivant</button>
+        </div>
+        <span class="countdown"></span> <!-- Ajout du countdown -->
+    </div>
+
+    <div class="question question3" data-correct="4">
+        <div>
+            <p>Question 3 :</p>
+        </div>
+        <div id="q3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="lesigne">?</div>
+            <p> 2 * 2 = </p>
+            <p id="text"></p>
+        </div>
+        <div id="infoBox">La multiplication de deux nombres est une opération mathématique qui consiste à répéter l'addition d'un nombre plusieurs fois.</div>
+        <div class="choix-container">
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget9">1</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget10">2</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget11">3</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget12">4</div>
+        </div>
+        <div class="bt">
+            <button onclick="revien()">Précédent</button>
+            <button onclick="suivant()">Suivant</button>
+        </div>
+        <span class="countdown"></span> <!-- Ajout du countdown -->
+    </div>
+
+    <div class="question question4" data-correct="1">
+        <div>
+            <p>Question 4 :</p>
+        </div>
+        <div class="q4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="lesigne">?</div>
+            <p>2 / 2 = </p>
+        </div>
+        <div id="infoBox">La division de deux nombres est l'opération inverse de la multiplication.</div>
+        <div class="choix-container">
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget13">1</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget14">2</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget15">3</div>
+            <div class="choix" ondragstart="dragStart(event)" draggable="true" id="dragtarget16">4</div>
+        </div>
+        <div class="bt">
+            <button onclick="revien()">Précédent</button>
+            <button onclick="suivant()">Afficher le résultat</button>
+        </div>
+        <span class="countdown"></span> <!-- Ajout du countdown -->
+    </div>
+
+    <!-- Boîte modale -Alert personnalisé -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal" id="resultModal">
+        <h2>Résultats du quiz</h2>
+        <p>Votre note : <span id="score"></span></p>
+        <button onclick="fermerModal()">Fermer</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
